@@ -13,6 +13,9 @@ RUN bzip2 -d samtools-1.1.tar.bz2
 RUN tar xvf samtools-1.1.tar
 WORKDIR samtools-1.1
 RUN make prefix=/usr/ install
+
+
+
 ##
 ## Get fastqc
 ##
@@ -24,11 +27,27 @@ RUN sudo ln -s /tmp/FastQC/fastqc /usr/local/bin/fastqc
 
 RUN apt-get update && apt-get install -y git
 
-RUN git clone https://github.com/jts/bam2fastq.git
+
+##Get bam2fastq for extracting fastq reads from a bam file
+RUN git clone --recursive https://github.com/jts/bam2fastq
+
+
+WORKDIR bam2fastq
+RUN make
+RUN sudo ln -s /tmp/bam2fastq/bam2fastq /usr/local/bin/bam2fastq
+
+WORKDIR /tmp
+RUN git clone https://github.com/samtools/bcftools.git
+RUN git clone https://github.com/samtools/htslib.git
+
+WORKDIR bcftools
+RUN make
+
+
 
 ###Get repository of the course. Install data and R packages
-RUN git clone https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sschool.git /home/rstudio/
-WORKDIR /home/rstudio/cruk-bioinf-sschool
+RUN git clone https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sschool.git /home/rstudio
+WORKDIR /home/rstudio/
 RUN ls
 RUN chmod 755 getData.sh
 RUN ./getData.sh 
