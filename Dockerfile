@@ -46,7 +46,7 @@ RUN make
 
 
 ###Get repository of the course. Install data and R packages
-RUN git clone https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sschool.git /home/rstudio
+RUN git clone https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sschool.git /home/rstudio/
 WORKDIR /home/rstudio/
 RUN ls
 RUN chmod 755 getData.sh

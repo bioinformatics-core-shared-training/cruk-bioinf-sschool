@@ -8,12 +8,13 @@ samtools index exampleData/NA19914.chr22.bam
 samtools index exampleData/NA19909.chr22.bam
 samtools index exampleData/NA19916.chr22.bam
 
+wget http://hgdownload-test.cse.ucsc.edu/goldenPath/hg19/chromosomes/chr22.fa.gz
 
 bam2fastq --output example.#.fq exampleData/NA19914.chr22.bam 
 
 head -n 4000000 example._1.fq > exampleData/sample.fq
 
-samtools mpileup -uf human_g1k_v37.fasta.gz exampleData/NA*.bam | bcftools view -bvcg - > exampleData/chr22.raw.bcf 
+samtools mpileup -uf chr22.fa.gz exampleData/NA*.bam | bcftools view -bvcg - > exampleData/chr22.raw.bcf 
 
 bcftools view exampleData/chr22.raw.bcf  | vcfutils.pl varFilter  -D100 > exampleData/chr22.flt.vcf  
 
