@@ -25,7 +25,7 @@ RUN unzip fastqc_v0.11.2.zip
 RUN chmod 755 FastQC/fastqc
 RUN sudo ln -s /tmp/FastQC/fastqc /usr/local/bin/fastqc
 
-RUN apt-get update && apt-get install -y git
+RUN apt-get update && apt-get install -y git bwa
 
 
 ##Get bam2fastq for extracting fastq reads from a bam file
@@ -41,14 +41,18 @@ RUN git clone https://github.com/samtools/bcftools.git
 RUN git clone https://github.com/samtools/htslib.git
 
 WORKDIR bcftools
+RUN make 
+RUN ln -s /tmp/bcftools/bcftools /usr/local/bin/bcftools
+WORKDIR htslib
 RUN make
-
+RUN ln -s /tmp/htslib/tabix /usr/local/bin/tabix
+RUN ln -s /tmp/htslib/bgzip /usr/local/bin/bgzip
 
 
 ###Get repository of the course. Install data and R packages
-RUN git clone https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sschool.git /home/rstudio/
-WORKDIR /home/rstudio/
-RUN ls
-RUN chmod 755 getData.sh
-RUN ./getData.sh 
-RUN R -f installBiocPkgs.R
+#RUN git clone https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sschool.git /home/rstudio/
+#WORKDIR /home/rstudio/
+#RUN ls
+#RUN chmod 755 getData.sh
+#RUN ./getData.sh 
+#RUN R -f installBiocPkgs.R
