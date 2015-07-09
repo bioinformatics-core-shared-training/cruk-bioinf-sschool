@@ -1,5 +1,5 @@
 ###Get repository of the course.
-git clone https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sscchool.git
+git clone https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sschool.git
 
 cd cruk-bioinf-sscchool
 
