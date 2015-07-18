@@ -3,7 +3,7 @@ FROM bioconductor/release_base
 MAINTAINER Mark Dunning<mark.dunning@cruk.cam.ac.uk>
 
 
-RUN apt-get update && apt-get install -y git samtools
+RUN apt-get update && apt-get install -y git samtools bowtie2 sra-toolkit
 ###Get repository of the course. Install data and R packages
 RUN git clone https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sschool.git /home/rstudio/
 WORKDIR /home/rstudio
@@ -19,4 +19,9 @@ RUN unzip nki.zip
 RUN rm nki.zip
 WORKDIR /home/rstudio
 RUN R -f installBiocPkgs.R
+RUN wget http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.3.zip -P /tmp/
+WORKDIR /tmp
+RUN unzip fastqc_v0.11.3.zip
+RUN chmod 755 /tmp/FastQC/fastqc
+RUN ln -s /tmp/FastQC/fastqc /usr/bin/fastqc
 
