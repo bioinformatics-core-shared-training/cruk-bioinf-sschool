@@ -1,12 +1,16 @@
 ###Get repository of the course.
-git clone https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sschool.git
-sudo apt-get install git samtools tophat sra-toolkit pkg-config
+#git clone https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sschool.git
+sudo apt-get install git samtools tophat sra-toolkit pkg-config bwa wget bedtools
 
 cd cruk-bioinf-sscchool
 
 samtools view -h ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/other_exome_alignments/HG00096/exome_alignment/HG00096.mapped.illumina.mosaik.GBR.exome.20111114.bam 22 | samtools view -bS - > Day2/HG00096.chr22.bam
 samtools index Day2/HG00096.chr22.bam
 rm HG00096.mapped.illumina.mosaik.GBR.exome.20111114.bam.bai
+
+samtools sort -n Day2/HG00096.chr22.bam Day2/HG00096.chr22.namesorted
+bamToFastq -i Day2/HG00096.chr22.namesorted.bam -fq Day1/test.reads_1.fq -fq2 Day1/test.reads_2.fq
+rm Day2/HG00096.chr22.namesorted.bam
 
 ##Download required R packages. Assumes R 3.2.0
 R -f installBiocPkgs.R
@@ -24,6 +28,7 @@ rm nki.zip
 
 cd ../../
 cd Software
+##Get latest version of bowtie and tophat
 
 wget http://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.2.5/bowtie2-2.2.5-linux-x86_64.zip
 unzip bowtie2-2.2.5-linux-x86_64.zip
@@ -52,6 +57,11 @@ cd fastx_toolkit-0.0.14
 make
 sudo make install
 
-##Get latest version of bowtie and tophat
+cd ../ref_data
+wget http://hgdownload-test.cse.ucsc.edu/goldenPath/hg19/chromosomes/chr22.fa.gz
+gunzip chr22.fa.gz
+bwa index chr22.fa
 
+../Software/bowtie2-2.2.5/bowtie2-build chr22.fa chr22
 
+cd ../
