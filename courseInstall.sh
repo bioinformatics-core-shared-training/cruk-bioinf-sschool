@@ -1,6 +1,6 @@
 ###Get repository of the course.
 git clone https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sschool.git
-sudo apt-get install samtools
+sudo apt-get install git samtools tophat sra-toolkit pkg-config
 
 cd cruk-bioinf-sscchool
 
@@ -21,3 +21,37 @@ wget https://www.dropbox.com/s/82p2dcwwo3qnf21/nki.zip -P Day1/nki
 cd Day1/nki
 unzip nki.zip
 rm nki.zip
+
+cd ../../
+cd Software
+
+wget http://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.2.5/bowtie2-2.2.5-linux-x86_64.zip
+unzip bowtie2-2.2.5-linux-x86_64.zip
+
+wget http://ccb.jhu.edu/software/tophat/downloads/tophat-2.1.0.Linux_x86_64.tar.gz
+gunzip tophat-2.1.0.Linux_x86_64.tar.gz
+tar xvf tophat-2.1.0.Linux_x86_64.tar
+
+
+
+#### Get and compile fastx toolkit
+cd /tmp
+wget https://github.com/agordon/libgtextutils/releases/download/0.7/libgtextutils-0.7.tar.gz
+gunzip libgtextutils-0.7.tar.gz
+tar -xvf libgtextutils-0.7.tar
+cd libgtextutils-0.7
+./configure
+make
+sudo make install
+cd ../
+
+wget http://cancan.cshl.edu/labmembers/gordon/files/fastx_toolkit-0.0.14.tar.bz2 
+tar -xjf fastx_toolkit-0.0.14.tar.bz2 
+cd fastx_toolkit-0.0.14
+./configure
+make
+sudo make install
+
+##Get latest version of bowtie and tophat
+
+
