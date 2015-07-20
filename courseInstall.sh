@@ -2,7 +2,7 @@
 #git clone https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sschool.git
 sudo apt-get install -y git samtools tophat sra-toolkit pkg-config bwa wget bedtools
 
-cd cruk-bioinf-sscchool
+#cd cruk-bioinf-sscchool
 
 samtools view -h ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/other_exome_alignments/HG00096/exome_alignment/HG00096.mapped.illumina.mosaik.GBR.exome.20111114.bam 22 | samtools view -bS - > Day2/HG00096.chr22.bam
 samtools index Day2/HG00096.chr22.bam
@@ -40,7 +40,7 @@ tar xvf tophat-2.1.0.Linux_x86_64.tar
 
 
 #### Get and compile fastx toolkit
-cd /tmp
+
 wget https://github.com/agordon/libgtextutils/releases/download/0.7/libgtextutils-0.7.tar.gz
 gunzip libgtextutils-0.7.tar.gz
 tar -xvf libgtextutils-0.7.tar
