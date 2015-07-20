@@ -1,6 +1,6 @@
 ###Get repository of the course.
 #git clone https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sschool.git
-sudo apt-get install -y git samtools tophat sra-toolkit pkg-config bwa wget bedtools
+sudo apt-get install -y git samtools tophat sra-toolkit pkg-config bwa wget bedtools python-dev
 
 #cd cruk-bioinf-sscchool
 
@@ -56,6 +56,13 @@ cd fastx_toolkit-0.0.14
 ./configure
 make
 sudo make install
+
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python get-pip.py
+sudo pip install cython
+sudo pip install cutadapt
+sudo pip install Numpy
+sudo pip install MACS2
 
 cd ../ref_data
 wget http://hgdownload-test.cse.ucsc.edu/goldenPath/hg19/chromosomes/chr22.fa.gz
