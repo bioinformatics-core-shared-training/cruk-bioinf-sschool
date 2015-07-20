@@ -3,7 +3,7 @@ FROM bioconductor/release_base
 MAINTAINER Mark Dunning<mark.dunning@cruk.cam.ac.uk>
 
 
-RUN apt-get update && apt-get install -y git samtools sra-toolkit pkg-config bwa bedtools
+RUN apt-get update && apt-get install -y git samtools sra-toolkit pkg-config bwa bedtools python-dev
 ###Get repository of the course. Install data and R packages
 RUN git clone https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sschool.git /home/rstudio/
 WORKDIR /home/rstudio
@@ -55,6 +55,13 @@ RUN unzip bowtie2-2.2.5-linux-x86_64.zip
 RUN wget http://ccb.jhu.edu/software/tophat/downloads/tophat-2.1.0.Linux_x86_64.tar.gz
 RUN gunzip tophat-2.1.0.Linux_x86_64.tar.gz
 RUN tar xvf tophat-2.1.0.Linux_x86_64.tar
+
+RUN wget https://bootstrap.pypa.io/get-pip.py
+RUN sudo python get-pip.py
+RUN sudo pip install cython
+RUN sudo pip install cutadapt
+RUN sudo pip install Numpy
+RUN sudo pip install MACS2
 
 RUN rm *.zip
 RUN rm *.tar
