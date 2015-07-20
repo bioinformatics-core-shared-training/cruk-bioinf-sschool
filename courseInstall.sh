@@ -1,6 +1,6 @@
 ###Get repository of the course.
 #git clone https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sschool.git
-sudo apt-get install git samtools tophat sra-toolkit pkg-config bwa wget bedtools
+sudo apt-get install -y git samtools tophat sra-toolkit pkg-config bwa wget bedtools
 
 cd cruk-bioinf-sscchool
 
