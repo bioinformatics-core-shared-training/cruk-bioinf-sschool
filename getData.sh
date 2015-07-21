@@ -39,3 +39,7 @@ ln -s $(pwd)/chr22.fa bowtie/
 
 ../Software/bowtie2-2.2.5/bowtie2-build bowtie/chr22.fa chr22
 
+##tidy-up some files that came from github
+cd ..
+
+rm -r img stylesheets params.json
