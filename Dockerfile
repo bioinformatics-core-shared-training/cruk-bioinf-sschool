@@ -9,7 +9,6 @@ RUN git clone https://github.com/bioinformatics-core-shared-training/cruk-bioinf
 WORKDIR /home/rstudio
 RUN chmod 755 getData.sh
 RUN ./getData.sh
-RUN R -f installBiocPkgs.R
 RUN chmod 755 softwareInstall.sh
 RUN ./softwareInstall
 
