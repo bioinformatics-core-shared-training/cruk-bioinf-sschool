@@ -23,13 +23,6 @@ samtools sort -n Day2/HG00096.chr22.bam Day2/HG00096.chr22.namesorted
 bamToFastq -i Day2/HG00096.chr22.namesorted.bam -fq Day1/test.reads_1.fq -fq2 Day1/test.reads_2.fq
 rm Day2/HG00096.chr22.namesorted.bam
 
-
-###Get chromosome 22 fasa
-
-cd ref_data
-wget http://hgdownload-test.cse.ucsc.edu/goldenPath/hg19/chromosomes/chr22.fa.gz
-gunzip chr22.fa.gz
-
 cd Software
 
 ##Get latest version of bowtie and tophat
@@ -41,7 +34,15 @@ wget http://ccb.jhu.edu/software/tophat/downloads/tophat-2.1.0.Linux_x86_64.tar.
 gunzip tophat-2.1.0.Linux_x86_64.tar.gz
 tar xvf tophat-2.1.0.Linux_x86_64.tar
 
+###Get chromosome 22 fasa
+
+cd ../ref_data
+wget http://hgdownload-test.cse.ucsc.edu/goldenPath/hg19/chromosomes/chr22.fa.gz
+gunzip chr22.fa.gz
+
+
+
 ##Build bwa and bowtie indices
 bwa index chr22.fa
-Software/bowtie2-2.2.5/bowtie2-build chr22.fa chr22
+../Software/bowtie2-2.2.5/bowtie2-build chr22.fa chr22
 
