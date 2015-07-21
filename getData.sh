@@ -8,7 +8,7 @@ unzip nki.zip
 rm nki.zip
 cd ../../
 ##Larger fastq file for QA practical
-wget https://www.dropbox.com/s/b8gix98mzlzdrqq/SRR576933.fastq.gz -P Day1
+wget https://www.dropbox.com/s/b8gix98mzlzdrqq/SRR576933.fastq.gz -P Day1/qa
 
 
 ### 1000 Genomes bam for Day 2
@@ -20,7 +20,8 @@ rm HG00096.mapped.illumina.mosaik.GBR.exome.20111114.bam.bai
 ##Extract some of the reads for Day1
 
 samtools sort -n Day2/HG00096.chr22.bam Day2/HG00096.chr22.namesorted
-bamToFastq -i Day2/HG00096.chr22.namesorted.bam -fq Day1/test.reads_1.fq -fq2 Day1/test.reads_2.fq
+mkdir -p Day1/alignment-demo
+bamToFastq -i Day2/HG00096.chr22.namesorted.bam -fq Day1//alignment-demo/test.reads_1.fq -fq2 Day1//alignment-demo/test.reads_2.fq
 rm Day2/HG00096.chr22.namesorted.bam
 
 cd Software

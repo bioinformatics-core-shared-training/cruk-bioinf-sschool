@@ -1,6 +1,6 @@
 ###Get repository of the course.
 #git clone https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sschool.git
-sudo apt-get install -y git samtools tophat sra-toolkit pkg-config bwa wget bedtools python-dev r-base libjpeg62 libxml2-dev libcurl4-gnutls-dev r-cran-rgl
+sudo apt-get install -y git samtools tophat sra-toolkit pkg-config bwa wget bedtools python-dev r-base libjpeg62 libxml2-dev libcurl4-gnutls-dev r-cran-rgl openjdk-7-jre
 
 ##Download required R packages. Assumes R 3.2.0
 sudo R -f installBiocPkgs.R
@@ -19,12 +19,19 @@ make
 sudo make install
 cd ../
 
-wget http://cancan.cshl.edu/labmembers/gordon/files/fastx_toolkit-0.0.14.tar.bz2 
+wget https://github.com/agordon/fastx_toolkit/releases/download/0.0.14/fastx_toolkit-0.0.14.tar.bz2
 tar -xjf fastx_toolkit-0.0.14.tar.bz2 
 cd fastx_toolkit-0.0.14
 ./configure
 make
 sudo make install
+
+##fastqc
+
+wget http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.3.zip
+unzip fastqc_v0.11.3.zip
+chmod 755 FastQC/fastqc
+sudo ln -s $(pwd)/FastQC/fastqc /usr/bin/fastqc
 
 ##tidy-up 
 rm *.zip
