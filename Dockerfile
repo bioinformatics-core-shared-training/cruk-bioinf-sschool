@@ -15,12 +15,16 @@ RUN bamToFastq -i Day2/HG00096.chr22.namesorted.bam -fq Day1/test.reads_1.fq -fq
 
 
 RUN mkdir Day1/nki
+RUN wget https://www.dropbox.com/s/b8gix98mzlzdrqq/SRR576933.fastq.gz -P Day1
+
 
 RUN rm -r img stylesheets params.json index.html
 RUN wget https://www.dropbox.com/s/82p2dcwwo3qnf21/nki.zip -P Day1/nki
 WORKDIR Day1/nki
 RUN unzip nki.zip
 RUN rm nki.zip
+
+
 WORKDIR /home/rstudio
 RUN R -f installBiocPkgs.R
 RUN wget http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.3.zip -P /home/rstudio/Software
