@@ -40,10 +40,14 @@ cd fastx_toolkit-0.0.14
 make
 sudo make install
 
+##tidy-up 
+rm *.zip
+rim *.tar
+
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python get-pip.py
 sudo pip install cython
 sudo pip install cutadapt
 sudo pip install Numpy
 sudo pip install MACS2
-
+rm get-pip.py
