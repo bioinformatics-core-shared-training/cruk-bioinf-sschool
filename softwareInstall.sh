@@ -1,9 +1,9 @@
 ###Get repository of the course.
 #git clone https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sschool.git
-sudo apt-get install -y git samtools tophat sra-toolkit pkg-config bwa wget bedtools python-dev r-base
+sudo apt-get install -y git samtools tophat sra-toolkit pkg-config bwa wget bedtools python-dev r-base libjpeg62 libxml2-dev libcurl4-gnutls-dev r-cran-rgl
 
 ##Download required R packages. Assumes R 3.2.0
-R -f installBiocPkgs.R
+sudo R -f installBiocPkgs.R
 
 
 
@@ -37,3 +37,9 @@ sudo pip install cutadapt
 sudo pip install Numpy
 sudo pip install MACS2
 rm get-pip.py
+
+## Finally, RStudio
+
+wget https://download1.rstudio.org/rstudio-0.99.467-amd64.deb
+
+sudo dpkg -i rstudio-0.99.467-amd64.deb
