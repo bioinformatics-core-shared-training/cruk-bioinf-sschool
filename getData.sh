@@ -20,7 +20,7 @@ rm HG00096.mapped.illumina.mosaik.GBR.exome.20111114.bam.bai
 ##Extract some of the reads for Day1
 
 samtools sort -n Day2/HG00096.chr22.bam Day2/HG00096.chr22.namesorted
-mkdir -p Day/alignment-demo
+mkdir -p Day1/alignment-demo
 bamToFastq -i Day2/HG00096.chr22.namesorted.bam -fq Day1//alignment-demo/test.reads_1.fq -fq2 Day1//alignment-demo/test.reads_2.fq
 rm Day2/HG00096.chr22.namesorted.bam
 
