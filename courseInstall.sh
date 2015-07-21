@@ -26,6 +26,8 @@ cd Day1/nki
 unzip nki.zip
 rm nki.zip
 
+wget https://www.dropbox.com/s/b8gix98mzlzdrqq/SRR576933.fastq.gz -P Day1
+
 cd ../../
 cd Software
 ##Get latest version of bowtie and tophat
