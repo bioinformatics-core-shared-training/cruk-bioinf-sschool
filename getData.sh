@@ -6,7 +6,7 @@ wget https://www.dropbox.com/s/82p2dcwwo3qnf21/nki.zip -P Day1/nki
 cd Day1/nki
 unzip nki.zip
 rm nki.zip
-
+cd ../../
 ##Larger fastq file for QA practical
 wget https://www.dropbox.com/s/b8gix98mzlzdrqq/SRR576933.fastq.gz -P Day1
 
