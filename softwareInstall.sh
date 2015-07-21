@@ -1,9 +1,9 @@
 ###Get repository of the course.
 #git clone https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sschool.git
-sudo apt-get install -y git samtools tophat sra-toolkit pkg-config bwa wget bedtools python-dev r-base
+sudo apt-get install -y git samtools tophat sra-toolkit pkg-config bwa wget bedtools python-dev r-base libjpeg62
 
 ##Download required R packages. Assumes R 3.2.0
-R -f installBiocPkgs.R
+sudo R -f installBiocPkgs.R
 
 
 
