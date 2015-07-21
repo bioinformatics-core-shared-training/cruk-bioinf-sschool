@@ -37,7 +37,7 @@ wget http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-2.2
 gunzip cufflinks-2.2.1.Linux_x86_64.tar.gz
 tar xvf cufflinks-2.2.1.Linux_x86_64.tar
 
-rm *.tar
+rm *.tar *.zip
 
 ###Get chromosome 22 fasa
 
