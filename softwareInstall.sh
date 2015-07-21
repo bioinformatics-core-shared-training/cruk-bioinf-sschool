@@ -26,6 +26,13 @@ cd fastx_toolkit-0.0.14
 make
 sudo make install
 
+##fastqc
+
+wget http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.3.zip
+unzip fastqc_v0.11.3.zip
+chmod 755 FastQC/fastqc
+sudo ln -s ${pwd}/FastQC/fastqc /usr/bin/fastqc
+
 ##tidy-up 
 rm *.zip
 rim *.tar
