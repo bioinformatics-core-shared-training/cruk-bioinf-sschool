@@ -19,7 +19,7 @@ make
 sudo make install
 cd ../
 
-wget http://cancan.cshl.edu/labmembers/gordon/files/fastx_toolkit-0.0.14.tar.bz2 
+wget https://github.com/agordon/fastx_toolkit/releases/download/0.0.14/fastx_toolkit-0.0.14.tar.bz2
 tar -xjf fastx_toolkit-0.0.14.tar.bz2 
 cd fastx_toolkit-0.0.14
 ./configure
