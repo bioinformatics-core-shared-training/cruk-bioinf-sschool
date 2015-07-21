@@ -51,9 +51,8 @@ ln -s $(pwd)/chr22.fa bwa/
 bwa index bwa/chr22.fa
 
 mkdir bowtie
-ln -s $(pwd)/chr22.fa bowtie/
 
-../Software/bowtie2-2.2.5/bowtie2-build bowtie/chr22.fa chr22
+../Software/bowtie2-2.2.5/bowtie2-build chr22.fa bowtie/chr22
 
 cd ..
 
