@@ -30,6 +30,17 @@ cd ref_data
 wget http://hgdownload-test.cse.ucsc.edu/goldenPath/hg19/chromosomes/chr22.fa.gz
 gunzip chr22.fa.gz
 
+cd Software
+
+##Get latest version of bowtie and tophat
+
+wget http://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.2.5/bowtie2-2.2.5-linux-x86_64.zip
+unzip bowtie2-2.2.5-linux-x86_64.zip
+
+wget http://ccb.jhu.edu/software/tophat/downloads/tophat-2.1.0.Linux_x86_64.tar.gz
+gunzip tophat-2.1.0.Linux_x86_64.tar.gz
+tar xvf tophat-2.1.0.Linux_x86_64.tar
+
 ##Build bwa and bowtie indices
 bwa index chr22.fa
 Software/bowtie2-2.2.5/bowtie2-build chr22.fa chr22
