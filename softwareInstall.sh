@@ -37,3 +37,9 @@ sudo pip install cutadapt
 sudo pip install Numpy
 sudo pip install MACS2
 rm get-pip.py
+
+## Finally, RStudio
+
+wget https://download1.rstudio.org/rstudio-0.99.467-amd64.deb
+
+sudo dpkg -i rstudio-0.99.467-amd64.deb
