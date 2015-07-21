@@ -29,9 +29,13 @@ cd ref_data
 wget http://hgdownload-test.cse.ucsc.edu/goldenPath/hg19/chromosomes/chr22.fa.gz
 gunzip chr22.fa.gz
 
-
-
 ##Build bwa and bowtie indices
-bwa index chr22.fa
-../Software/bowtie2-2.2.5/bowtie2-build chr22.fa chr22
+mkdir bwa
+ln -s $(pwd)/chr22.fa bwa/
+bwa index bwa/chr22.fa
+
+mkdir bowtie
+ln -s $(pwd)/chr22.fa bowtie/
+
+../Software/bowtie2-2.2.5/bowtie2-build bowtie/chr22.fa chr22
 
