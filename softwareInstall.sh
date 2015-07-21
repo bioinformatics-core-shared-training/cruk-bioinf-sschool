@@ -31,7 +31,7 @@ sudo make install
 wget http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.3.zip
 unzip fastqc_v0.11.3.zip
 chmod 755 FastQC/fastqc
-sudo ln -s ${pwd}/FastQC/fastqc /usr/bin/fastqc
+sudo ln -s $(pwd)/FastQC/fastqc /usr/bin/fastqc
 
 ##tidy-up 
 rm *.zip
