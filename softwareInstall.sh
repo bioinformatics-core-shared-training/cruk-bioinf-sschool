@@ -5,21 +5,7 @@ sudo apt-get install -y git samtools tophat sra-toolkit pkg-config bwa wget bedt
 ##Download required R packages. Assumes R 3.2.0
 R -f installBiocPkgs.R
 
-cd Software
-##Get latest version of bowtie and tophat
 
-wget http://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.2.5/bowtie2-2.2.5-linux-x86_64.zip
-unzip bowtie2-2.2.5-linux-x86_64.zip
-
-wget http://ccb.jhu.edu/software/tophat/downloads/tophat-2.1.0.Linux_x86_64.tar.gz
-gunzip tophat-2.1.0.Linux_x86_64.tar.gz
-tar xvf tophat-2.1.0.Linux_x86_64.tar
-
-wget http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-2.2.1.Linux_x86_64.tar.gz
-gunzip cufflinks-2.2.1.Linux_x86_64.tar.gz
-tar xvf cufflinks-2.2.1.Linux_x86_64.tar
-
-rm *.tar
 
 
 #### Get and compile fastx toolkit
