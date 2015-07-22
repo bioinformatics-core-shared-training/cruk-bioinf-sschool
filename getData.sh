@@ -56,4 +56,3 @@ mkdir bowtie
 ../Software/bowtie2-2.2.5/bowtie2-build chr22.fa bowtie/chr22
 
 cd ..
-
