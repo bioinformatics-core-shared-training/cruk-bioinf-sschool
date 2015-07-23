@@ -7,8 +7,6 @@ cd Day1/nki
 unzip nki.zip
 rm nki.zip
 cd ../../
-##Larger fastq file for QA practical
-wget https://www.dropbox.com/s/b8gix98mzlzdrqq/SRR576933.fastq.gz -P Day1/qa
 
 
 ### 1000 Genomes bam for Day 2
