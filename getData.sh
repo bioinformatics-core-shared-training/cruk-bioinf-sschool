@@ -22,6 +22,11 @@ mkdir -p Day1/alignment-demo
 bamToFastq -i Day2/HG00096.chr22.namesorted.bam -fq Day1//alignment-demo/test.reads_1.fq -fq2 Day1//alignment-demo/test.reads_2.fq
 rm Day2/HG00096.chr22.namesorted.bam
 
+## Single aligned bam for file Day 3
+
+wget https://drive.google.com/file/d/0BzP_K8ayRzPRbF9TcEFEeUFfcE0 -P Day3/
+wget https://drive.google.com/file/d/0BzP_K8ayRzPROVVpaVMyaWVCbkU -P Day3/
+
 cd Software
 ##Get latest version of bowtie and tophat
 
