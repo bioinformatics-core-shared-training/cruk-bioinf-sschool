@@ -15,6 +15,11 @@ samtools view -h ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/other_exome_
 samtools index Day2/HG00096.chr22.bam
 rm HG00096.mapped.illumina.mosaik.GBR.exome.20111114.bam.bai
 
+mkdir Day1/alignment-demo
+cd Day1/alignment-demo
+wget ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX%2FSRX483%2FSRX483591/SRR1186252/SRR1186252.sra
+fastq-dump SRR1186252.sra
+ 
 
 cd Software
 ##Get latest version of bowtie and tophat
@@ -50,7 +55,10 @@ mkdir bowtie
 mkdir whole_genome
 cd whole_genome
 wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/human_g1k_v37.fasta.gz
-gunzip human_g1k_v37.fasta.gz
-bwa index human_g1k_v37.fasta
+mkdir bwa
+mkdir bowtie
+ln -s $(pwd)/human_g1k_v37.fasta.gz bwa/
+bwa index -p hg19 bwa/human_g1k_v37.fasta.gz
+../../Software/bowtie2-2.2.5/bowtie2-build human_g1k_v37.fasta.gz bowtie/hg19
 
 cd ../..
