@@ -15,14 +15,6 @@ samtools view -h ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/other_exome_
 samtools index Day2/HG00096.chr22.bam
 rm HG00096.mapped.illumina.mosaik.GBR.exome.20111114.bam.bai
 
-##Extract some of the reads for Day1
-
-samtools sort -n Day2/HG00096.chr22.bam Day2/HG00096.chr22.namesorted
-mkdir -p Day1/alignment-demo
-bamToFastq -i Day2/HG00096.chr22.namesorted.bam -fq Day1//alignment-demo/test.reads_1.fq -fq2 Day1//alignment-demo/test.reads_2.fq
-rm Day2/HG00096.chr22.namesorted.bam
-
-
 
 cd Software
 ##Get latest version of bowtie and tophat
@@ -55,4 +47,10 @@ mkdir bowtie
 
 ../Software/bowtie2-2.2.5/bowtie2-build chr22.fa bowtie/chr22
 
-cd ..
+mkdir whole_genome
+cd whole_genome
+wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/human_g1k_v37.fasta.gz
+gunzip human_g1k_v37.fasta.gz
+bwa index human_g1k_v37.fasta
+
+cd ../..
