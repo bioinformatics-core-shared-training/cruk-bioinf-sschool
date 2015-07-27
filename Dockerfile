@@ -8,8 +8,9 @@ RUN sudo apt-get install -y git samtools tophat sra-toolkit bwa wget bedtools py
 RUN git clone https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sschool.git /home/rstudio/
 WORKDIR /home/rstudio
 RUN chmod 755 getData.sh
-RUN ./getData.sh
 RUN sudo R -f installBiocPkgs.R
+RUN R -f getNKIData.R
+RUN ./getData.sh
 WORKDIR Software
 RUN wget http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.3.zip
 RUN unzip fastqc_v0.11.3.zip
@@ -17,6 +18,13 @@ RUN sudo chmod 755 FastQC/fastqc
 RUN ln -s $(pwd)/FastQC/fastq /usr/bin/fastqc
 #RUN rm -r img stylesheets params.json img
 RUN rm fastqc_v0.11.3.zip
+RUN wget http://downloads.sourceforge.net/project/samstat/samstat-1.5.1.tar.gz
+RUN tar -zxcf samstat-1.5.1
+RUN cd samstat-1.5.1
+RUN ./configure
+RUN sudo make install
+
+
 RUN wget https://bootstrap.pypa.io/get-pip.py
 RUN sudo python get-pip.py
 RUN sudo pip install cython

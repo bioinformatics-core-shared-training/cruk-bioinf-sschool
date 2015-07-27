@@ -1,0 +1,6 @@
+library(breastCancerNKI)
+data(nki)
+dir.create("Day1/nki")
+write.table(exprs(nki), file="Day1/nki/NKI.exprs.txt",sep="\t",quote=FALSE)
+write.table(pData(nki), file="Day1/nki/NKI.pData.txt",sep="\t",quote=FALSE)
+write.table(fData(nki), file="Day1/nki/NKI.fData.txt",sep="\t",quote=FALSE)
