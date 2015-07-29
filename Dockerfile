@@ -12,13 +12,13 @@ RUN sudo R -f installBiocPkgs.R
 RUN R -f getNKIData.R
 
 
-RUN ./getData.sh
+#RUN ./getData.sh
 
 
 RUN mkdir Day1/alignment-demo
 WOKDIR Day1/alignment-demo
-RUN wget ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX%2FSRX483%2FSRX483591/SRR1186252/SRR1186252.sra
-RUN fastq-dump SRR1186252.sra
+#RUN wget ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX%2FSRX483%2FSRX483591/SRR1186252/SRR1186252.sra
+#RUN fastq-dump SRR1186252.sra
 RUN wget https://www.dropbox.com/s/68p2g96v5fpun5f/SRR1186252_trimmed.fq.chr6.fq
 RUN wget http://hgdownload.cse.ucsc.edu/goldenpath/hg19/chromosomes/chr6.fa.gz
 RUN gunzip chr6.fa.gz
@@ -68,12 +68,12 @@ RUN ../Software/bowtie2-2.2.5/bowtie2-build chr22.fa bowtie/chr22
 
 RUN mkdir whole_genome
 WORKDIR  whole_genome
-RUN wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/human_g1k_v37.fasta.gz
-RUN mkdir bwa
-RUN mkdir bowtie
-RUN ln -s $(pwd)/human_g1k_v37.fasta.gz bwa/
-RUN bwa index -p hg19 bwa/human_g1k_v37.fasta.gz
-RUN ../../Software/bowtie2-2.2.5/bowtie2-build human_g1k_v37.fasta.gz bowtie/hg19
+#RUN wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/human_g1k_v37.fasta.gz
+#RUN mkdir bwa
+#RUN mkdir bowtie
+#RUN ln -s $(pwd)/human_g1k_v37.fasta.gz bwa/
+#RUN bwa index -p hg19 bwa/human_g1k_v37.fasta.gz
+#RUN ../../Software/bowtie2-2.2.5/bowtie2-build human_g1k_v37.fasta.gz bowtie/hg19
 
 WORKDIR  ../..
 
