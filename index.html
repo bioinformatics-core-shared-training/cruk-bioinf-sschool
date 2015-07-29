@@ -153,13 +153,24 @@ A breast cancer dataset is also required for the Bioconductor introductory pract
 </p>
 <h3>
 <a id="docker" class="anchor" href="#docker" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using Docker.</h3>
-<p>
-<pre class="input"><code>docker run -p 8787:8787 markdunning/cruk-bioinf-sschool</code></pre>
-Then load your web browser of choice and enter the address
-<pre class="input"><code>http://localhost:8787</code></pre>
-This will allow you to use RStudio in your web browser with the username and password 'rstudio'
-</p>
-</p>
+               <p>
+                <br>
+                If you not attending one of our courses in-person you can still run the Virtual Machine using the <a href="http://www.docker.com">Docker</a> system. 
+                First, you will need to install the &quot;boot2docker&quot; software.  Please see our <a href="install.pdf">Installation guide</a> for step-by-step instructions.
+                </p>
+
+                <p>Once you have boot2docker installed, an icon should appear on your Desktop (Windows) or Applications folder (Mac). After running this new application, a new window should appear will various lines of white text on a black background. The last line should read;
+
+                <pre class="input"><code>docker@boot2docker:~$</code></pre>
+
+                Now carefully type the following line of text (using the correct spaces and punctuation is very important!)
+
+                <pre class="input"><code>docker run -ti markdunning/unix-training</code></pre>
+
+                This may download and install some data. Once this has finished, you are now ready to walkthrough the examples
+
+                </p>
+
 </section>
   
   </body>
