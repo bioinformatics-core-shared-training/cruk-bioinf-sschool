@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Best Practices in the analysis in RNA-seq and ChIP-seq data by bioinformatics-core-shared-training</title>
+    <title>Best Practices in the analysis of RNA-seq and ChIP-seq data by bioinformatics-core-shared-training</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -13,7 +13,7 @@
 
     
     <section class="page-header">
-      <h1 class="project-name">Best Practices in the analysis in RNA-seq and ChIP-seq data</h1>
+      <h1 class="project-name">Best Practices in the analysis of RNA-seq and ChIP-seq data</h1>
       <h2 class="project-tagline">Cambridge, Uk, 27th - 31st July 2015</h2>
       <a href="https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sschool" class="btn">View on GitHub</a>
       <a href="https://github.com/bioinformatics-core-shared-training/cruk-bioinf-sschool/zipball/master" class="btn">Download .zip</a>
@@ -92,7 +92,8 @@ Some introductory statistics will be also be assumed. See <a href="http://www.bm
 <li><a target="_blank" href="Day1/NGS_QC_inesdesantiago.pdf">Quality Assessment of NGS Data (L)</a></li>
 <li><a target="_blank" href="Day1/fastqc_sweave.pdf">Quality Assessment of NGS Data (P)</a></li>
 <li><a target="_blank" href="https://docs.google.com/forms/d/1h1sXLptX5FUhoVnmwdY7MKEaU-39fcBYpRIsdVpH-LM/viewform?c=0&amp;w=1f">Quality Assessment of NGS Data (Quiz!)</a></li>
-<li><a target="_blank" href="Day1/Sequence Alignment_July2015_ShamithSamarajiwa.pdf">Alignment Demo</a></li>
+<li><a target="_blank" href="Day1/Sequence Alignment_July2015_ShamithSamarajiwa.pdf">Alignment Slides</a></li>
+<li><a target="_blank" href="Day1/Alignment_Demo.pdf">Alignment Demo</a></li>
 </p>
 <h3>
 <a id="day2" class="anchor" href="#day2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Day Two.</h3>
@@ -116,51 +117,100 @@ Some introductory statistics will be also be assumed. See <a href="http://www.bm
 <h3>
 <a id="day4" class="anchor" href="#day4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Day Four.</h3>
 <p>
-<li>Downstream Analysis of RNA-seq Data (L)</li>
-<li>Downstream Analysis of RNA-seq Data (P)</li>
+<li><a target="_blank" href="Day4/Downstream_Analysis_of_Transcrptomic_Data.pdf">Downstream Analysis of RNA-seq Data (L)</a></li>
+<li><a target="_blank" href="Day4/Day4_RNseq_DownstreamAnalysis.pdf">Downstream Analysis of RNA-seq Data (P)</a></li>
 <li><a target="_blank" href="Day4/Introduction_to_ChIPseq_July2015_ShamithSamarajiwa.pdf">Introduction to ChIP-Seq (L) </a></li>
 <li><a target="_blank" href="Day4/ChIP_QC_presentation.pdf">Analysis of ChIP-Seq (L) </a></li>
 <li><a target="_blank" href="Day4/chipqc_sweave.pdf">ChIP-Seq Practical</a></li>
+<li><a target="_blank" href="Day4/rep-research.html">Reproducible Research</a><a target="_blank" href="Day4/Reproducible Research.pdf">[ Printable PDF ] </a></li>
 </p>
 <h3>
 <a id="day5" class="anchor" href="#day5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Day Five.</h3>
 <p>
 <li><a target="_blank" href="Day5/ChIPseq_Downstream_analysis_July2015_ShamithSamarajiwa.pdf"><Downstream Analysis of ChIP-Seq Data (L)</a>Downstream Analysis of ChIP-Seq Data (L) </li>
-<li>Downstream Analysis of ChIP-Seq Data (P)</li>
-<li><a target="_blank" href="Day5/rep-research.html">Reproducible Research</a><a target="_blank" href="Day5/Reproducible Research.pdf">[ Printable PDF ] </a></li>
+<li><a target="_blank" href="Day5/ChIP-Seq_Practical_2.pdf"><Downstream Analysis of ChIP-Seq Data (L)</a>Downstream Analysis of ChIP-Seq Data (P) </li>
 </p>
 <h3>
 <a id="software" class="anchor" href="#software" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to Run the course.</h3>
-We recommend using <a href="www.rstudio.com">RStudio</a> for the practicals
+We recommend using <a href="www.rstudio.com">RStudio</a> for the practicals along with <a href="https://cran.r-project.org/">R version 3.2.1</a>
 <p>
 Download the materials from this repository and install the required R and Bioconductor packages from within RStudio. This may take several minutes.
 <pre class="input"><code>source("http://www.bioconductor.org/biocLite.R")
 biocLite(c("Biostrings", "ShortRead", "DESeq", "edgeR","biomaRt", "BSgenome",
-"BSgenome.Dmelanogaster.UCSC.dm6", "org.Dm.eg.db",
-"TxDb.Dmelanogaster.UCSC.dm3.ensGene", "pasillaBamSubset", "pasilla",
-"rtracklayer", "ggbio", "vsn","gplots","RColorBrewer","chipseq","htSeqTools","limma","NBPSeq","tweeDEseqCountData","org.Hs.eg.db","Rcade", "exomeCopy","CNAnorm", "ChIPQC","TxDb.Hsapiens.UCSC.hg19.knownGene","BSgenome.Hsapiens.UCSC.hg19", "ChIPpeakAnno","statmod","locfit","Rsubread"))
+           "pasillaBamSubset", "pasilla",
+           "rtracklayer", "ggbio", "vsn","gplots","RColorBrewer","chipseq","htSeqTools","limma","NBPSeq","tweeDEseqCountData","org.Hs.eg.db","Rcade", "ChIPQC","TxDb.Hsapiens.UCSC.hg19.knownGene","BSgenome.Hsapiens.UCSC.hg19","ChIPpeakAnno","statmod","locfit","Rsubread","goseq","GO.db"))
 </code></pre>
+
+The Download zip file link at the top of this page will download all the lectures and practicals, and some example data. However, larger data files have to be downloaded from elsewhere because they are too large to share on github
+</p>
+
+<h2>
+<a id="data" class="anchor" href="#data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Data.</h2>
+<h3>Day 1</h3>
+<p>
+A breast cancer dataset is also required for the Bioconductor introductory practical. This folder can be downloaded from <a href="https://www.dropbox.com/s/82p2dcwwo3qnf21/nki.zip">Dropbox.</a> Once downloaded and unzipped, the folder should be placed inside the Day1 directory
+</p>
+<p>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/SRR1186252_trimmed.fq.chr6.fq">Example chromosome 6 reads</a></li>
+  <li><a target="_blank" href="http://hgdownload.cse.ucsc.edu/goldenpath/hg19/chromosomes/chr6.fa.gz">Chromosome 6 reference sequence</a></li>
+</p>
+<h3>Day 2</h3>
+<p>
+  
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/HG00096.chr22.bam">1000genomes sample, chromosome 22 aligned reads bam</a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/HG00096.chr22.bam.bai">1000genomes sample, chromosome 22 aligned reads bam index</a></li>
+  <li><a target="_blank" href="http://hgdownload-test.cse.ucsc.edu/goldenPath/hg19/chromosomes/chr22.fa.gz">Chromosome 22 reference sequence</a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/16N_aligned.bam">RNA-seq sample 16N aligned bam </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/16N_aligned.bam.bai">RNA-seq sample 16N aligned bam index </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/16T_aligned.bam">RNA-seq sample 16T aligned bam </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/16T_aligned.bam.bai">RNA-seq sample 16T aligned bam index </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/18N_aligned.bam">RNA-seq sample 18N aligned bam </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/18N_aligned.bam.bai">RNA-seq sample 18N aligned bam index </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/18T_aligned.bam">RNA-seq sample 18T aligned bam </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/18T_aligned.bam.bai">RNA-seq sample 18T aligned bam index </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/19N_aligned.bam">RNA-seq sample 19N aligned bam </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/19N_aligned.bam.bai">RNA-seq sample 19N aligned bam index </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/19T_aligned.bam">RNA-seq sample 19T aligned bam </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/19T_aligned.bam.bai">RNA-seq sample 19N aligned bam index </a></li>
+<p>
+  
 </p>
 
 <h3>
-<a id="data" class="anchor" href="#data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Data.</h3>
-<p>
-An exampleData folder is required to run the practicals sucessfully. This folder can be downloaded from <a href="https://www.dropbox.com/s/ve6o68hkbthe3lo/exampleData.zip">Dropbox.</a> Once downloaded and unzipped, the folder should be placed inside the Practicals directory
-</p>
-<p>
-A breast cancer dataset is also required for the Bioconductor introductory practical. This folder can be downloaded from <a href="https://www.dropbox.com/s/82p2dcwwo3qnf21/nki.zip">Dropbox.</a> Once downloaded and unzipped, the folder should be placed inside the Practicals directory
-</p>
-<h3>
 <a id="docker" class="anchor" href="#docker" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using Docker.</h3>
-<p>
-<pre class="input"><code>docker run -p 8787:8787 markdunning/cruk-bioinf-sschool</code></pre>
-Then load your web browser of choice and enter the address
-<pre class="input"><code>http://localhost:8787</code></pre>
-This will allow you to use RStudio in your web browser with the username and password 'rstudio'
-</p>
-</p>
+               <p>
+                <br>
+                If you not attending one of our courses in-person you can still run the Virtual Machine using the <a href="http://www.docker.com">Docker</a> system. 
+                First, you will need to install the <a href="http://boot2docker.io/">boot2Docker</a> software.
+                </p>
+
+                <p>Once you have boot2docker installed, an icon should appear on your Desktop (Windows) or Applications folder (Mac). After running this new application, a new window should appear will various lines of white text on a black background. The last line should read;
+
+                <pre class="input"><code>docker@boot2docker:~$</code></pre>
+
+                Now carefully type the following line of text (using the correct spaces and punctuation is very important!)
+
+                <pre class="input"><code>docker run -p 8787:8787 markdunning/cruk-bioinf-sschool</code></pre>
+
+                This will download and install some data. Once this has finished, you can open a web browser and type the following. This will launch a version of RStudio within your browser.
+                <pre class="input"><code>http://localhost:8787</code></pre>
+                
+                For exercises which use the command-line (e.g. alignment and qa practicals) run the following command in boot2docker
+                
+                <pre class="input"><code>docker run -ti markdunning/cruk-bioinf-sschool /bin/bash</code></pre>
+                
+                </p>
+<h2>
+<a id="data" class="anchor" href="#data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resources</h2>
+
+<li><a target="_blank" href="http://seqanswers.com/forums/forumdisplay.php?f=18">seqanswers Bioinformatics forum</a></li>
+<li><a target="_blank" href="https://www.biostars.org/">Biostars forum</a></li>
+<li><a target="_blank" href="https://support.bioconductor.org/">Bioconductor forum</a></li>
+<li><a target="_blank" href="http://www.r-bloggers.com/">R-bloggers</a></li>
+<li><a target="_blank" href="https://en.wikibooks.org/wiki/Next_Generation_Sequencing_%28NGS%29">NGS wiki</a></li>
+
+
 </section>
   
   </body>
 </html>
-
