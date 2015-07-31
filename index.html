@@ -132,31 +132,54 @@ Some introductory statistics will be also be assumed. See <a href="http://www.bm
 </p>
 <h3>
 <a id="software" class="anchor" href="#software" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to Run the course.</h3>
-We recommend using <a href="www.rstudio.com">RStudio</a> for the practicals
+We recommend using <a href="www.rstudio.com">RStudio</a> for the practicals along with <a href="https://cran.r-project.org/">R version 3.2.1</a>
 <p>
 Download the materials from this repository and install the required R and Bioconductor packages from within RStudio. This may take several minutes.
 <pre class="input"><code>source("http://www.bioconductor.org/biocLite.R")
 biocLite(c("Biostrings", "ShortRead", "DESeq", "edgeR","biomaRt", "BSgenome",
-"BSgenome.Dmelanogaster.UCSC.dm6", "org.Dm.eg.db",
-"TxDb.Dmelanogaster.UCSC.dm3.ensGene", "pasillaBamSubset", "pasilla",
-"rtracklayer", "ggbio", "vsn","gplots","RColorBrewer","chipseq","htSeqTools","limma","NBPSeq","tweeDEseqCountData","org.Hs.eg.db","Rcade", "exomeCopy","CNAnorm", "ChIPQC","TxDb.Hsapiens.UCSC.hg19.knownGene","BSgenome.Hsapiens.UCSC.hg19", "ChIPpeakAnno","statmod","locfit","Rsubread"))
+           "pasillaBamSubset", "pasilla",
+           "rtracklayer", "ggbio", "vsn","gplots","RColorBrewer","chipseq","htSeqTools","limma","NBPSeq","tweeDEseqCountData","org.Hs.eg.db","Rcade", "ChIPQC","TxDb.Hsapiens.UCSC.hg19.knownGene","BSgenome.Hsapiens.UCSC.hg19","ChIPpeakAnno","statmod","locfit","Rsubread","goseq","GO.db"))
 </code></pre>
 </p>
 
-<h3>
-<a id="data" class="anchor" href="#data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Data.</h3>
+<h2>
+<a id="data" class="anchor" href="#data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Data.</h2>
+<h3>Day 1</h3>
 <p>
-An exampleData folder is required to run the practicals sucessfully. This folder can be downloaded from <a href="https://www.dropbox.com/s/ve6o68hkbthe3lo/exampleData.zip">Dropbox.</a> Once downloaded and unzipped, the folder should be placed inside the Practicals directory
+A breast cancer dataset is also required for the Bioconductor introductory practical. This folder can be downloaded from <a href="https://www.dropbox.com/s/82p2dcwwo3qnf21/nki.zip">Dropbox.</a> Once downloaded and unzipped, the folder should be placed inside the Day1 directory
 </p>
 <p>
-A breast cancer dataset is also required for the Bioconductor introductory practical. This folder can be downloaded from <a href="https://www.dropbox.com/s/82p2dcwwo3qnf21/nki.zip">Dropbox.</a> Once downloaded and unzipped, the folder should be placed inside the Practicals directory
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/SRR1186252_trimmed.fq.chr6.fq">Example chromosome 6 reads</a></li>
+  <li><a target="_blank" href="http://hgdownload.cse.ucsc.edu/goldenpath/hg19/chromosomes/chr6.fa.gz">Chromosome 6 reference sequence</a></li>
 </p>
+<h3>Day 2</h3>
+<p>
+  
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/HG00096.chr22.bam">1000genomes sample, chromosome 22 aligned reads bam</a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/HG00096.chr22.bam.bai">1000genomes sample, chromosome 22 aligned reads bam index</a></li>
+  <li><a target="_blank" href="http://hgdownload-test.cse.ucsc.edu/goldenPath/hg19/chromosomes/chr22.fa.gz">Chromosome 22 reference sequence</a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/16N_aligned.bam">RNA-seq sample 16N aligned bam </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/16N_aligned.bam.bai">RNA-seq sample 16N aligned bam index </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/16T_aligned.bam">RNA-seq sample 16T aligned bam </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/16T_aligned.bam.bai">RNA-seq sample 16T aligned bam index </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/18N_aligned.bam">RNA-seq sample 18N aligned bam </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/18N_aligned.bam.bai">RNA-seq sample 18N aligned bam index </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/18T_aligned.bam">RNA-seq sample 18T aligned bam </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/18T_aligned.bam.bai">RNA-seq sample 18T aligned bam index </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/19N_aligned.bam">RNA-seq sample 19N aligned bam </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/19N_aligned.bam.bai">RNA-seq sample 19N aligned bam index </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/19T_aligned.bam">RNA-seq sample 19T aligned bam </a></li>
+  <li><a target="_blank" href="http://training.bio.cam.ac.uk/cruk/19T_aligned.bam.bai">RNA-seq sample 19N aligned bam index </a></li>
+<p>
+  
+</p>
+
 <h3>
 <a id="docker" class="anchor" href="#docker" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using Docker.</h3>
                <p>
                 <br>
                 If you not attending one of our courses in-person you can still run the Virtual Machine using the <a href="http://www.docker.com">Docker</a> system. 
-                First, you will need to install the &quot;boot2docker&quot; software.  Please see our <a href="http://bioinformatics-core-shared-training.github.io/shell-novice/install.pdf">Installation guide</a> for step-by-step instructions.
+                First, you will need to install the &quot;boot2docker&quot; software.
                 </p>
 
                 <p>Once you have boot2docker installed, an icon should appear on your Desktop (Windows) or Applications folder (Mac). After running this new application, a new window should appear will various lines of white text on a black background. The last line should read;
@@ -175,6 +198,15 @@ A breast cancer dataset is also required for the Bioconductor introductory pract
                 <pre class="input"><code>docker run -ti markdunning/cruk-bioinf-sschool /bin/bash</code></pre>
                 
                 </p>
+<h2>
+<a id="data" class="anchor" href="#data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resources</h2>
+
+<li><a target="_blank" href="http://seqanswers.com/forums/forumdisplay.php?f=18">seqanswers Bioinformatics forum</a></li>
+<li><a target="_blank" href="https://www.biostars.org/">Biostars forum</a></li>
+<li><a target="_blank" href="https://support.bioconductor.org/">Bioconductor forum</a></li>
+<li><a target="_blank" href="http://www.r-bloggers.com/">R-bloggers</a></li>
+<li><a target="_blank" href="https://en.wikibooks.org/wiki/Next_Generation_Sequencing_%28NGS%29">NGS wiki</a></li>
+
 
 </section>
   
